@@ -1,0 +1,30 @@
+"""
+@author: amandahsu
+#project euler
+#multiple of 3 and 5
+"""
+import numpy as np
+
+#sol 1
+num = 1000
+sum_mul = 0
+
+for i in range(1, num):
+	if i % 3 == 0 or i % 5 == 0:
+		sum_mul += i
+
+sol = sum_mul
+
+
+#sol 2
+num = 100
+
+#array of 3 and 5 multiples less than num
+mul_3 = np.arange(3, num, 3)
+mul_5 = np.arange(5, num, 5)
+
+#take the unique value and sum
+muls = np.unique(np.concatenate([mul_3,mul_5]))
+sum_mul_2 = np.sum(muls)
+
+sol = sum_mul_2
