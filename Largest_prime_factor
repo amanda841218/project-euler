@@ -1,0 +1,45 @@
+#Largest prime factor
+import numpy as np
+
+def find_prime(num):
+
+	number = 3
+	
+	if num == 1:
+		return False
+	if num == 2:
+		return True
+	
+	if num % 2 == 0:
+		return False
+	
+	#find if the num is devisible by other numbers only up to the square root of it
+	while num**0.5 >= number:
+		if num % number == 0:
+			return False
+		
+		number += 2
+	
+	return True
+
+def find_factors(num):
+	
+	num_list = np.arange(1, num + 1)
+	
+	factors = list(filter(lambda x: num % x == 0, num_list))
+	
+	return factors
+	
+	
+def find_prime_factors(num):
+	
+	factors = find_factors(num)
+	
+	prime_factors = list(filter(lambda x: find_prime(x) == True, factors))
+	
+	return prime_factors
+
+
+#-----------------------------
+number = 600851475143
+sol = max(find_prime_factors(number))
