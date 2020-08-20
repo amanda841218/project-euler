@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
 Created on Thu Aug 20 21:58:30 2020
 
@@ -23,7 +21,7 @@ def check_palindromic_num(num):
 
 digit = 3
 
-#compuute the product of all 3 digit *3 digit numbers
+#compute the product of all 3 digit *3 digit numbers
 product_base = np.arange(10**(digit-1), 10**digit)
 
 products = list(map(lambda x: x* product_base, product_base))
